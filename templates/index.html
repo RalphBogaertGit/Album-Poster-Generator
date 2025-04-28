@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Poster Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <form id="posterForm" action="/generate" method="POST" enctype="multipart/form-data">
+            <h1>Album Poster Generator</h1>
+
+            <label for="spotifyLink">Spotify Link:</label>
+            <input type="url" id="spotifyLink" name="spotifyLink" required>
+
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" required>
+
+            <label for="spotifyCode">
+                <a href="https://www.spotifycodes.com/" target="_blank">Spotify Code</a> Image:
+            </label>
+            <input type="file" id="spotifyCode" name="spotifyCode" accept="image/*">
+
+            <fieldset>
+                <legend>Select Dominant Colors</legend>
+                <input type="color" id="color1" name="color1">
+                <input type="color" id="color2" name="color2">
+                <input type="color" id="color3" name="color3">
+                <input type="color" id="color4" name="color4">
+                <input type="color" id="color5" name="color5">
+            </fieldset>
+
+            <button type="submit">Generate Poster</button>
+        </form>
+    </div>
+</body>
+</html>
